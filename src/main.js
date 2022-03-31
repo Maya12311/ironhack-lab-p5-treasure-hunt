@@ -8,3 +8,5 @@ function setup() {
 function draw() {
   game.drawGrid();
 }
+
+draw()
