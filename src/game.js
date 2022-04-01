@@ -1,6 +1,6 @@
 class Game {
   constructor(){
-    //  this.player = new Player(0,0)
+    this.player = new Player(200, 200)
   }
   drawGrid() {
       let lineX = 100
@@ -12,18 +12,15 @@ class Game {
       for (let i = 0; i < 9; i++) {
         line(0, lineY, 1000, lineY)
         lineY +=100
+      
       } 
-        
-        }
-        preload(){
-          this.player.image = loadImage('/assets/character-down.png')
-      }  
-      draw(){
-        this.player.draw()
+    } 
+     draw() {
+       this.player.draw()
       }   
+  
+    
   }
-   
- 
   
 
 
@@ -31,8 +28,10 @@ class Game {
 
   class Player {
     constructor(col, row){
-    this.col = col;
-    this.row = row;
+    this.col = 0;
+    this.row = 0;
+    this.width = 100
+    this.height = 100
     this.image
     }
     moveUp(){
@@ -48,8 +47,11 @@ class Game {
       this.col += 1;
     }
     draw(){
-      Image(this.image, this.row, this.col, this.width, this.height)
+    image(this.image, this.row, this.col, this.width, this.height)
       
+    }
+    preload(){
+    this.image = loadImage('../assets/character-down.png')
     }
   }
 
