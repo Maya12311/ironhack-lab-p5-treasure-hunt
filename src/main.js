@@ -1,5 +1,5 @@
 const game = new Game();
-const player = new Player();
+//const player = new Player();
 
 //const player = new Player(0, 0);
 
@@ -18,4 +18,5 @@ function draw() {
 
 function preload() {
 game.player.preload()
+game.treasure.preload()
 }
