@@ -17,6 +17,7 @@ class Game {
     } 
      draw() {
        this.player.draw()
+        
       }   
   
     
@@ -35,19 +36,23 @@ class Game {
     this.image
     }
     moveUp(){
+      this.col -=100;
     }
     moveDown(){
-    this.row += 1;
-    this.row += 1;
+    this.col += 100;
+    
     }
     moveLeft(){
-
+      this.row -=100;
     }
     moveRight(){
-      this.col += 1;
+      this.row += 100;
     }
     draw(){
     image(this.image, this.row, this.col, this.width, this.height)
+    if (keyIsDown(65)){
+      this.moveRight()
+    }
       
     }
     preload(){
@@ -55,3 +60,17 @@ class Game {
     }
   }
 
+function keyPressed () {
+  if(keyCode === 39){
+       game.player.moveRight()
+  } 
+  if (keyCode === 40){
+       game.player.moveDown()
+  }
+  if (keyCode === 37){
+        game.player.moveLeft()
+  }
+  if (keyCode === 38) {
+        game.player.moveUp()
+  }
+}

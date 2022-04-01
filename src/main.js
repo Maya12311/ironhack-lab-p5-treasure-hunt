@@ -11,6 +11,7 @@ function setup() {
 }
 
 function draw() {
+  clear()
   game.drawGrid();
   game.draw()
 }
